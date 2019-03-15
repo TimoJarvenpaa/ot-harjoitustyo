@@ -7,4 +7,5 @@
 * [gitlog.txt](laskarit/viikko1/gitlog.txt)
 
 
-Tässä on **lihavoitua** ja tässä _kursivoitua_ tekstiä.
+Tässä on **lihavoitua** ja tässä _kursivoitua_ tekstiä. Tässä 
+_**molempia samaan aikaan**_.
