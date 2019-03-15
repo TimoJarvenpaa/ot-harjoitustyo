@@ -1,4 +1,5 @@
 $ git log --stat | cat
+
 commit 0a7ceb98cfa0c5ac5682f9bd82f5135ff8daadc8
 Author: Timo Järvenpää <**.*********@gmail.com>
 Date:   Fri Mar 15 11:47:53 2019 +0200
@@ -112,5 +113,3 @@ Date:   Fri Mar 15 11:08:24 2019 +0200
 
  tiedosto.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
-
-
