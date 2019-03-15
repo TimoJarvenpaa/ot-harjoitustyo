@@ -1,0 +1,116 @@
+$ git log --stat | cat
+commit 0a7ceb98cfa0c5ac5682f9bd82f5135ff8daadc8
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:47:53 2019 +0200
+
+    file1 poistettu ja file2 uudelleennimetty
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 5798461e8dc52ca46d890331fcd21e9c9d37284d
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:43:28 2019 +0200
+
+    tiedostoja lisätty
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit e0a9b1e683cb9a2c5d9304dfeb97be73f1004760
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:33:31 2019 +0200
+
+    muutoksia
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 1 +
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+commit cc8aac073e611adf5977fe2e91d7ba152e0761b5
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:29:51 2019 +0200
+
+    tiedosto uudelleennimetty
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b224c93d70fea9f10c43d2709419bd50e9610f2f
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:28:36 2019 +0200
+
+    toinen poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit a4b147d6018926f55a33e4472df582202c9afbcc
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:25:59 2019 +0200
+
+    poistettu ja lisätty tekstiä
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ef46cd6e99010f4902c60ecfe9ecb790d58af14d
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:24:43 2019 +0200
+
+    lisätty tekstiä tiedostoon
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2be13154f39bc19bb810f24231c72322670dfaef
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:17:28 2019 +0200
+
+    hakemisto 'stuff' lisätty
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2bba7a75bff0a1624a5f2ea59d009eacc8ad4d38
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:16:20 2019 +0200
+
+    muokattu toista ja kolmatta
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit b55069c43bf508547fb39ae662b6e54f1acb8be4
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:14:52 2019 +0200
+
+    kolmas.txt lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 87196ca812d5f047aff419912b486a2c569482cb
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:11:48 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 592518d10859c1f2ecda57b878616426c7be6d72
+Author: Timo Järvenpää <**.*********@gmail.com>
+Date:   Fri Mar 15 11:08:24 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
