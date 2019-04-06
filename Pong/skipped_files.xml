@@ -6,4 +6,5 @@
 
 <suppressions>
     <suppress files="pong.ui.PongUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="pong.ui.MainMenu.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>
