@@ -28,7 +28,7 @@ public class Paddle {
     }
 
     public boolean move(int amount) {
-        if (this.paddle.getY() + amount >= 0 && this.paddle.getY() + amount <= HEIGHT-paddleHeight) {
+        if (this.paddle.getY() + amount >= 0 && this.paddle.getY() + amount <= HEIGHT - paddleHeight) {
             this.paddle.setY(this.paddle.getY() + amount);
             return true;
         }

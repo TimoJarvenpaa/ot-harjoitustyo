@@ -32,7 +32,7 @@ public class PongUI extends Application {
         Paddle paddleRight = new Paddle(false);
         pane.getChildren().add(paddleRight.getPaddle());
 
-        Scene scene = new Scene(pane);
+        Scene scene = new Scene(pane, WIDTH, HEIGHT);
 
         Map<KeyCode, Boolean> keysPressed = new HashMap<>();
 

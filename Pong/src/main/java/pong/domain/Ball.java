@@ -9,14 +9,14 @@ import static pong.ui.PongUI.WIDTH;
 public class Ball {
 
     private Circle ball;
-    private int dx;
-    private int dy;
+    private int xSpeed;
+    private int ySpeed;
 
     public Ball() {
         this.ball = new Circle(10, Color.WHITE);
         this.ball.relocate(WIDTH / 2, HEIGHT / 2);
-        this.dx = 2;
-        this.dy = 4;
+        this.xSpeed = 2;
+        this.ySpeed = 4;
     }
 
     public Circle getBall() {
@@ -24,15 +24,15 @@ public class Ball {
     }
 
     public void update() {
-        this.ball.setLayoutX(this.ball.getLayoutX() + dx);
-        this.ball.setLayoutY(this.ball.getLayoutY() + dy);
+        this.ball.setLayoutX(this.ball.getLayoutX() + xSpeed);
+        this.ball.setLayoutY(this.ball.getLayoutY() + ySpeed);
 
         if (this.ball.getLayoutX() < 0 || this.ball.getLayoutX() > WIDTH) {
             reset();
         }
         
         if (this.ball.getLayoutY() < 0 || this.ball.getLayoutY() > HEIGHT) {
-            this.dy = -1*dy;
+            this.ySpeed = -1 * ySpeed;
         }
     }
 
@@ -47,7 +47,7 @@ public class Ball {
         this.ball.relocate(WIDTH / 2, HEIGHT / 2);
     }
 
-    public void ricochet(){
-        this.dx = this.dx * -1;
+    public void ricochet() {
+        this.xSpeed = this.xSpeed * -1;
     }
 }
