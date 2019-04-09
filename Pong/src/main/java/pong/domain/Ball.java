@@ -23,14 +23,20 @@ public class Ball {
         return ball;
     }
 
-    public void update() {
+    public void update(Paddle leftPaddle, Paddle rightPaddle) {
         this.ball.setLayoutX(this.ball.getLayoutX() + xSpeed);
         this.ball.setLayoutY(this.ball.getLayoutY() + ySpeed);
 
-        if (this.ball.getLayoutX() < 0 || this.ball.getLayoutX() > WIDTH) {
+        if (this.ball.getLayoutX() < 0) {
+            rightPaddle.incrementScore();
             reset();
         }
         
+        if (this.ball.getLayoutX() > WIDTH) {
+            leftPaddle.incrementScore();
+            reset();
+        }
+
         if (this.ball.getLayoutY() < 0 || this.ball.getLayoutY() > HEIGHT) {
             this.ySpeed = -1 * ySpeed;
         }

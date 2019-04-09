@@ -11,6 +11,7 @@ public class Paddle {
     private int paddleHeight = 100;
     private int y = (HEIGHT / 2) - (paddleHeight / 2);
     private int x;
+    private int score;
 
     public Paddle(boolean left) {
         if (left) {
@@ -21,10 +22,19 @@ public class Paddle {
             this.paddle = new Rectangle(x, y, paddleWidth, paddleHeight);
         }
         paddle.setFill(javafx.scene.paint.Color.WHITE);
+        this.score = 0;
     }
 
     public Rectangle getPaddle() {
         return paddle;
+    }
+    
+    public int getScore() {
+        return this.score;
+    }
+    
+    public void incrementScore() {
+        this.score++;
     }
 
     public boolean move(int amount) {
