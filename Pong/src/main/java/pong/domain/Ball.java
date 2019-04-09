@@ -14,7 +14,7 @@ public class Ball {
 
     public Ball() {
         this.ball = new Circle(10, Color.WHITE);
-        this.ball.relocate(WIDTH / 2, HEIGHT / 2);
+        this.ball.relocate((WIDTH / 2) - this.ball.getRadius(), (HEIGHT / 2) - this.ball.getRadius());
         this.xSpeed = 2;
         this.ySpeed = 4;
     }
@@ -50,10 +50,20 @@ public class Ball {
     public void reset() {
         this.ball.setLayoutX(0);
         this.ball.setLayoutY(0);
-        this.ball.relocate(WIDTH / 2, HEIGHT / 2);
+        this.ball.relocate((WIDTH / 2) - this.ball.getRadius(), (HEIGHT / 2) - this.ball.getRadius());
     }
 
     public void ricochet() {
         this.xSpeed = this.xSpeed * -1;
     }
+
+    public int getXSpeed() {
+        return xSpeed;
+    }
+
+    public int getYSpeed() {
+        return ySpeed;
+    }
+    
+    
 }
