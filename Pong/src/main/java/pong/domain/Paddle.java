@@ -12,8 +12,10 @@ public class Paddle {
     private int y = (HEIGHT / 2) - (paddleHeight / 2);
     private int x;
     private int score;
+    private boolean left;
 
     public Paddle(boolean left) {
+        this.left = left;
         if (left) {
             x = paddleWidth;
             this.paddle = new Rectangle(x, y, paddleWidth, paddleHeight);
@@ -28,11 +30,11 @@ public class Paddle {
     public Rectangle getPaddle() {
         return paddle;
     }
-    
+
     public int getScore() {
         return this.score;
     }
-    
+
     public void incrementScore() {
         this.score++;
     }
@@ -45,4 +47,17 @@ public class Paddle {
         //System.out.println("PaddleY" + this.paddle.yProperty());
         return false;
     }
+
+    public boolean isLeft() {
+        return this.left;
+    }
+
+    public int getPaddleWidth() {
+        return this.paddleWidth;
+    }
+    
+    public int getPaddleHeight() {
+        return this.paddleHeight;
+    }
+
 }

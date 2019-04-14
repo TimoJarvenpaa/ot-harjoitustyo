@@ -82,8 +82,12 @@ public class PongUI {
                     rightPaddle.move(10);
                 }
 
-                if (ball.collides(leftPaddle) || ball.collides(rightPaddle)) {
-                    ball.ricochet();
+                if (ball.collides(leftPaddle)) {
+                    ball.ricochet(leftPaddle);
+                }
+                
+                if (ball.collides(rightPaddle)) {
+                    ball.ricochet(rightPaddle);
                 }
 
                 if (keysPressed.getOrDefault(KeyCode.ESCAPE, false)) {

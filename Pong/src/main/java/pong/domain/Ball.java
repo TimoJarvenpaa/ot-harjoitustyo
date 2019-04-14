@@ -35,8 +35,14 @@ public class Ball {
             reset();
         }
 
-        if (this.ball.getLayoutY() < 0 || this.ball.getLayoutY() > HEIGHT) {
+        if (this.ball.getLayoutY() < 0 + this.ball.getRadius()) {
             this.ySpeed = -1 * ySpeed;
+            this.ball.setLayoutY(this.ball.getLayoutY() + this.ball.getRadius());
+        }
+
+        if (this.ball.getLayoutY() > HEIGHT - this.ball.getRadius()) {
+            this.ySpeed = -1 * ySpeed;
+            this.ball.setLayoutY(this.ball.getLayoutY() - this.ball.getRadius());
         }
     }
 
@@ -52,8 +58,20 @@ public class Ball {
         randomizeDirectionAndSpeed();
     }
 
-    public void ricochet() {
-        this.xSpeed = this.xSpeed * -1;
+    public void ricochet(Paddle paddle) {
+        this.xSpeed *= -1;
+
+        if (paddle.isLeft()) {
+            double diff = (this.ball.getLayoutY() - paddle.getPaddle().getY()) / (paddle.getPaddleHeight() / 2);
+            this.ySpeed = 5 * diff;
+            this.ball.setLayoutX(this.ball.getLayoutX() + paddle.getPaddleWidth() / 2);
+        }
+
+        if (!paddle.isLeft()) {
+            double diff = (this.ball.getLayoutY() - paddle.getPaddle().getY()) / (paddle.getPaddleHeight() / 2);
+            this.ySpeed = 5 * diff;
+            this.ball.setLayoutX(this.ball.getLayoutX() - paddle.getPaddleWidth() / 2);
+        }
     }
 
     public double getXSpeed() {
@@ -63,14 +81,14 @@ public class Ball {
     public double getYSpeed() {
         return ySpeed;
     }
-    
-    public void randomizeDirectionAndSpeed(){
-        double min = Math.PI/4 * -1;
-        double max = Math.PI/4;
+
+    public void randomizeDirectionAndSpeed() {
+        double min = Math.PI / 4 * -1;
+        double max = Math.PI / 4;
         double angle = Math.random() * (max - min) + min;
         this.xSpeed = 5 * Math.cos(angle);
         this.ySpeed = 5 * Math.sin(angle);
-        
+
         if (Math.random() < 0.5) {
             this.xSpeed *= -1;
         }
