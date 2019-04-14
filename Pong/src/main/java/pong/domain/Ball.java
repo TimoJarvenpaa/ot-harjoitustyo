@@ -9,14 +9,12 @@ import static pong.ui.PongUI.WIDTH;
 public class Ball {
 
     private Circle ball;
-    private int xSpeed;
-    private int ySpeed;
+    private double xSpeed;
+    private double ySpeed;
 
     public Ball() {
         this.ball = new Circle(10, Color.WHITE);
-        this.ball.relocate((WIDTH / 2) - this.ball.getRadius(), (HEIGHT / 2) - this.ball.getRadius());
-        this.xSpeed = 2;
-        this.ySpeed = 4;
+        reset();
     }
 
     public Circle getBall() {
@@ -31,7 +29,7 @@ public class Ball {
             rightPaddle.incrementScore();
             reset();
         }
-        
+
         if (this.ball.getLayoutX() > WIDTH) {
             leftPaddle.incrementScore();
             reset();
@@ -47,23 +45,34 @@ public class Ball {
         return area.getBoundsInLocal().getWidth() != -1;
     }
 
-    public void reset() {
+    public final void reset() {
         this.ball.setLayoutX(0);
         this.ball.setLayoutY(0);
         this.ball.relocate((WIDTH / 2) - this.ball.getRadius(), (HEIGHT / 2) - this.ball.getRadius());
+        randomizeDirectionAndSpeed();
     }
 
     public void ricochet() {
         this.xSpeed = this.xSpeed * -1;
     }
 
-    public int getXSpeed() {
+    public double getXSpeed() {
         return xSpeed;
     }
 
-    public int getYSpeed() {
+    public double getYSpeed() {
         return ySpeed;
     }
     
-    
+    public void randomizeDirectionAndSpeed(){
+        double min = Math.PI/4 * -1;
+        double max = Math.PI/4;
+        double angle = Math.random() * (max - min) + min;
+        this.xSpeed = 5 * Math.cos(angle);
+        this.ySpeed = 5 * Math.sin(angle);
+        
+        if (Math.random() < 0.5) {
+            this.xSpeed *= -1;
+        }
+    }
 }
