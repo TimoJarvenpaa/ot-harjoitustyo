@@ -32,6 +32,9 @@ public class MainMenu extends Application {
 
         Button playButton = new Button("Play");
         playButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
+        
+        Button controlsButton = new Button("Controls");
+        controlsButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
 
         Button quitButton = new Button("Quit");
         quitButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
@@ -39,7 +42,7 @@ public class MainMenu extends Application {
             window.close();
         });
 
-        layout.getChildren().addAll(label, playButton, quitButton);
+        layout.getChildren().addAll(label, playButton, controlsButton, quitButton);
 
         Scene menuScene = new Scene(layout);
 
@@ -47,6 +50,15 @@ public class MainMenu extends Application {
             PongUI game = new PongUI();
             try {
                 game.display(window, menuScene);
+            } catch (Exception e) {
+
+            }
+        });
+        
+        controlsButton.setOnAction(event -> {
+            Controls controls = new Controls();
+            try {
+                controls.display(window, menuScene);
             } catch (Exception e) {
 
             }
