@@ -45,5 +45,22 @@ public class BallTest {
         assertEquals(WIDTH / 2, ball.getBall().getLayoutX(), 0.1);
         assertEquals(HEIGHT / 2, ball.getBall().getLayoutY(), 0.1);
     }
+    
+    @Test
+    public void collisionWithPaddleIsDetected() {
+        assertFalse(ball.collides(leftPaddle));
+        ball.getBall().setLayoutX(leftPaddle.getPaddle().getX());
+        ball.getBall().setLayoutY(leftPaddle.getPaddle().getY());
+        assertTrue(ball.collides(leftPaddle));
+    }
+    
+    @Test
+    public void ricochetChangesBallDirection(){
+        double initialXSpeed = ball.getXSpeed();
+        double initialYSpeed = ball.getYSpeed();
+        ball.ricochet(leftPaddle);
+        assertFalse(initialXSpeed == ball.getXSpeed());
+        assertFalse(initialYSpeed == ball.getYSpeed());
+    }
 
 }
