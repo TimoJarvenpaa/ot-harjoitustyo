@@ -9,6 +9,11 @@
 | 6.4. | 3 | JavaFX:n harjoittelua ja päävalikkonäkymän alustava toteutus |
 |  | 1 | päävalikko ja pelinäkymä eriytetty |
 | 9.4. | 1 | pistelaskurin toteutus |
-|  | 1 | testaus |
+|  | 1 | testausta |
 |  | 1 | arkkitehtuurikuvauksen alustava toteutus |
-| yht   | 15 | |
+| 14.4. | 2 | satunnaistettu pallon aloitussuunta ja nopeus |
+|  | 3 | parannettu pallon kimpoamismallinnusta |
+| 16.4. | 1 | testausta |
+|  | 1 | päävalikkoon lisätty näkymä kontrolleille |
+|  | 2 | päivitetty dokumentaatiota |
+| yht   | 24 | |
