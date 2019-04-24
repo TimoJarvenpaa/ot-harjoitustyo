@@ -47,9 +47,9 @@ public class MainMenu extends Application {
         Scene menuScene = new Scene(layout);
 
         playButton.setOnAction(event -> {
-            PongUI game = new PongUI();
+            PlayerNames nameInputMenu = new PlayerNames();
             try {
-                game.display(window, menuScene);
+                nameInputMenu.display(window, menuScene);
             } catch (Exception e) {
 
             }

@@ -3,8 +3,8 @@ package pong.domain;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
-import static pong.ui.PongUI.HEIGHT;
-import static pong.ui.PongUI.WIDTH;
+import static pong.ui.MainMenu.HEIGHT;
+import static pong.ui.MainMenu.WIDTH;
 
 public class Ball {
 
