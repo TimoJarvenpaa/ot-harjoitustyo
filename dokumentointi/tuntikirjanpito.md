@@ -16,4 +16,11 @@
 | 16.4. | 1 | testausta |
 |  | 1 | päävalikkoon lisätty näkymä kontrolleille |
 |  | 2 | päivitetty dokumentaatiota |
-| yht   | 24 | |
+| 23.4. | 5 | aikarajoitettu pelimuoto toteutettu ja tarvittavat näkymät lisätty |
+| 24.4. | 5 | DAO:n totetutus ja tietokannan käyttöönotto |
+| 26.4. | 2 | lisätty näkymä tulosten tarkastelua varten |
+|  | 1 | luotu testejä DAO:lle |
+|  | 2 | javadocin käyttöönotto ja alustava dokumentointi |
+|  | 1 | alustava käyttöohje |
+|  | 2 | arkkitehtuuridokumentin täydennys ja dokumentaation päivitys |
+| yht   | 42 | |

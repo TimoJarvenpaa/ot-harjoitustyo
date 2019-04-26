@@ -6,6 +6,8 @@ Sovelluksen avulla kaksi pelaajaa voivat pelata jaetulla näppäimistöllä klas
 
 ## Dokumentaatio
 
+[Käyttöohje](dokumentointi/kayttoohje.md)
+
 [Vaatimusmäärittely](dokumentointi/vaatimusmaarittely.md)
 
 [Arkkitehtuurikuvaus](dokumentointi/arkkitehtuuri.md)
@@ -15,6 +17,8 @@ Sovelluksen avulla kaksi pelaajaa voivat pelata jaetulla näppäimistöllä klas
 ## Julkaistut versiot
 
 [Viikko 5](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.0)
+
+[Viikko 6](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.1)
 
 ## Komentorivitoiminnot
 
@@ -54,3 +58,11 @@ Koodille voidaan suorittaa tiedostossa [checkstyle.xml](Pong/checkstyle.xml) mä
 mvn jxr:jxr checkstyle:checkstyle
 ```
 Yhteenvetoa voi tarkastella avaamalla selaimella tiedosto _Pong/target/site/checkstyle.html_
+
+### JavaDoc
+
+Sovelluksen JavaDoc luodaan komennolla
+```
+mvn javadoc:javadoc
+```
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _Pong/target/site/apidocs/index.html_
