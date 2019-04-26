@@ -44,7 +44,6 @@ public class Paddle {
             this.paddle.setY(this.paddle.getY() + amount);
             return true;
         }
-        //System.out.println("PaddleY" + this.paddle.yProperty());
         return false;
     }
 

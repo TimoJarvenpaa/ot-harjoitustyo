@@ -35,6 +35,9 @@ public class MainMenu extends Application {
         
         Button controlsButton = new Button("Controls");
         controlsButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
+        
+        Button highScoresButton = new Button("High-Scores");
+        highScoresButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
 
         Button quitButton = new Button("Quit");
         quitButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
@@ -42,7 +45,7 @@ public class MainMenu extends Application {
             window.close();
         });
 
-        layout.getChildren().addAll(label, playButton, controlsButton, quitButton);
+        layout.getChildren().addAll(label, playButton, controlsButton, highScoresButton, quitButton);
 
         Scene menuScene = new Scene(layout);
 
@@ -59,6 +62,15 @@ public class MainMenu extends Application {
             Controls controls = new Controls();
             try {
                 controls.display(window, menuScene);
+            } catch (Exception e) {
+
+            }
+        });
+        
+        highScoresButton.setOnAction(event -> {
+            HighScores scores = new HighScores();
+            try {
+                scores.display(window, menuScene);
             } catch (Exception e) {
 
             }

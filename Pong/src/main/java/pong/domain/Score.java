@@ -45,6 +45,13 @@ public class Score {
     public void setPlayer2Score(int player2Score) {
         this.player2Score = player2Score;
     }
+
+    @Override
+    public String toString() {
+        return player1Name + "  " + player1Score + "    -    " + player2Score + " " + player2Name;
+    }
+    
+    
     
     
     

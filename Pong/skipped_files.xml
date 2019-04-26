@@ -11,4 +11,5 @@
     <suppress files="pong.ui.PlayerNames.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="pong.ui.GameMode.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="pong.ui.GameOver.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="pong.ui.HighScores.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

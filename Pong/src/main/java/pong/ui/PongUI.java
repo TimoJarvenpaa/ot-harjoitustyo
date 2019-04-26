@@ -84,7 +84,7 @@ public class PongUI {
         new AnimationTimer() {
 
             boolean firstCycle = true;
-            PauseTransition timer = new PauseTransition(Duration.seconds(60));
+            PauseTransition timer = new PauseTransition(Duration.seconds(10));
 
             @Override
             public void handle(long now) {
