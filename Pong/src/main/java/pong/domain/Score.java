@@ -48,7 +48,7 @@ public class Score {
 
     @Override
     public String toString() {
-        return player1Name + "  " + player1Score + "    -    " + player2Score + " " + player2Name;
+        return player1Name + "  " + player1Score + "    -    " + player2Score + "  " + player2Name;
     }
     
     
