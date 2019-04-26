@@ -1,12 +1,15 @@
 package pong.domain;
 
+/**
+ * Yksittäisen pelin pisteistä ja pelaajien nimistä vastaava luokka.
+ */
 public class Score {
-    
+
     private String player1Name;
     private int player1Score;
     private String player2Name;
     private int player2Score;
-    
+
     public Score() {
         this.player1Score = 0;
         this.player2Score = 0;
@@ -46,15 +49,13 @@ public class Score {
         this.player2Score = player2Score;
     }
 
+    /**
+     * Pistetilanteen esitysmuoto, jota käytetään mm. pistelistan luomisessa.
+     *
+     * @return pelin loppupisteiden merkkijonoesitys
+     */
     @Override
     public String toString() {
         return player1Name + "  " + player1Score + "    -    " + player2Score + "  " + player2Name;
     }
-    
-    
-    
-    
-    
-    
-
 }

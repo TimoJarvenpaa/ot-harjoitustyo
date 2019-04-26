@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import pong.domain.Score;
 
+/**
+ * Pelin lopullisten pisteiden tietokantaan tallennuksesta ja pisteiden
+ * tietokannasta noutamisesta vastaava DAO.
+ */
 public class SQLScoreDAO implements ScoreDAO {
 
     private String file;
@@ -14,6 +18,9 @@ public class SQLScoreDAO implements ScoreDAO {
         createTable();
     }
 
+    /**
+     * Metodi luo tietokantaan taulun Score, jos sitä ei ole jo luotu.
+     */
     private void createTable() throws Exception {
         String createScoreTable = "CREATE TABLE IF NOT EXISTS score (id integer PRIMARY KEY, player1 varchar(10), player2 varchar(10), score1 integer, score2 integer);";
         try {
@@ -27,10 +34,22 @@ public class SQLScoreDAO implements ScoreDAO {
         }
     }
 
+    /**
+     * Metodi, joka muodostaa ja palauttaa tietokantayhteyden konstruktorissa määriteltyyn
+     * tiedostoon.
+     *
+     * @return Connection-olio, jota voidaan käyttää tietokantakyselyjen
+     * tekemiseen.
+     */
     public Connection getConnection() throws Exception {
         return DriverManager.getConnection("jdbc:sqlite:" + this.file);
     }
 
+    /**
+     * Metodi lisää tietokantaan parametrina annettua pistetilannetta vastaavan uuden rivin.
+     * 
+     * @return päättyneen pelin pistetilanteen ja pelaajien nimet sisältävä Score-olio;
+     */
     @Override
     public Score create(Score score) throws Exception {
         Connection conn = getConnection();
@@ -45,6 +64,11 @@ public class SQLScoreDAO implements ScoreDAO {
         return score;
     }
 
+    /**
+     * Metodi noutaa tietokannasta kaikki tallennetut pisteet ja palauttaa listan Score-olioita.
+     * 
+     * @return Lista tietokannasta noudettuja pisteitä uusimmasta vanhimpaan;
+     */
     @Override
     public List<Score> getAll() throws Exception {
         String query = "SELECT * FROM Score ORDER BY id DESC;";

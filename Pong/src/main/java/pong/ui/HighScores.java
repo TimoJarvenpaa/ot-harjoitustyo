@@ -19,6 +19,9 @@ import pong.domain.Score;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
+/**
+ * Aikarajoitettujen otteluiden lopputulokset esittävä näkymä.
+ */
 public class HighScores {
     
     public void display(Stage window, Scene returnScene) {

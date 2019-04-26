@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
+/**
+ * Pelin kontrollit esittelevä näkymä.
+ */
 public class Controls {
 
     public void display(Stage window, Scene returnScene) {

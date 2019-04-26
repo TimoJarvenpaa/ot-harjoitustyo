@@ -12,6 +12,9 @@ import pong.domain.Score;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
+/**
+ * Pelimuodon valinnan toteuttava näkymä.
+ */
 public class GameMode {
     
     public void display(Stage window, Scene returnScene, Score score) {

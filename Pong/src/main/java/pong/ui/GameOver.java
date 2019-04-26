@@ -15,8 +15,21 @@ import pong.domain.Score;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
+/**
+ * Aikarajoitetun pelin päättyessä näytettävä näkymä, joka myös tallentaa
+ * SQLScoreDAO:n avulla pelin lopputuloksen tietokantaan.
+ */
 public class GameOver {
 
+    /**
+     * Vaihtaa parametrina annetun sovellusikkunan näkymän Game Over -ruutuun, jossa näytetään pelin lopputulos.
+     * Lopputulos tallennetaan tietokantaan SQLScoreDAO-olion avulla.
+     * Return napin painallus ohjaa takaisin returnScene olion mukaiseen näkymään.
+     * 
+     * @param window sovelluksen pääikkunana toimiva Stage-olio
+     * @param returnScene paluunäkymän sisältävä Scene-olio nykyisestä näkymästä poistumista varten
+     * @param gameScore päättyneen pelin pisteet ja pelaajien nimet sisältävä tietorakenne
+     */
     public void display(Stage window, Scene returnScene, Score gameScore) {
 
         VBox layout = new VBox(30);
@@ -58,6 +71,11 @@ public class GameOver {
         }
     }
 
+    /**
+     * Apumetodi, joka palauttaa sovelluksen juurihakemistossa olevan
+     * config.properties -tiedoston sisältämän scoreFile-parametrin, joka
+     * puolestaan määrää luotavan tietokannan tiedostonimen.
+     */
     public String getScoreFile() throws Exception {
 
         Properties properties = new Properties();

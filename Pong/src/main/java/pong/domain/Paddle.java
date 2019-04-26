@@ -4,6 +4,9 @@ import javafx.scene.shape.Rectangle;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
+/**
+ * Pelissä käytettäviä mailoja kuvaava luokka.
+ */
 public class Paddle {
 
     private Rectangle paddle;
@@ -14,6 +17,13 @@ public class Paddle {
     private int score;
     private boolean left;
 
+    /**
+     * Mailan konstruktori, jossa mailan sijainti pelialueella määräytyy
+     * parametrin left perusteella.
+     *
+     * @param left muuttuja, jonka tarkoituksena on määrätä, onko luotava maila
+     * pelialueen vasemmalla vai oikealla puolella
+     */
     public Paddle(boolean left) {
         this.left = left;
         if (left) {
@@ -35,10 +45,23 @@ public class Paddle {
         return this.score;
     }
 
+    /**
+     * Metodi, jota käytetään päivittämään pelaajaan liittyvää pistelaskuria
+     * pelin aikana.
+     */
     public void incrementScore() {
         this.score++;
     }
 
+    /**
+     * Metodi, joka liikuttaa mailaa pelialueella pystyakselin suuntaisesti parametrin amount verran.
+     * Jos 
+     *
+     * @param amount pystyakselilla liikkuttava askelmäärä pikseleinä. Huom. Y-akselin arvot kasvavat alaspäin 
+     * ja pienenevät ylöspäin mennessä.
+     *
+     * @return true jos maila voi liikkua pyydettyyn suuntaan, muuten false
+     */
     public boolean move(int amount) {
         if (this.paddle.getY() + amount >= 0 && this.paddle.getY() + amount <= HEIGHT - paddleHeight) {
             this.paddle.setY(this.paddle.getY() + amount);
@@ -54,7 +77,7 @@ public class Paddle {
     public int getPaddleWidth() {
         return this.paddleWidth;
     }
-    
+
     public int getPaddleHeight() {
         return this.paddleHeight;
     }

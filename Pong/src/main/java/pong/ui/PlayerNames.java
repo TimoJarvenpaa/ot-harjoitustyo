@@ -13,6 +13,9 @@ import pong.domain.Score;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
+/**
+ * Pelaajien nimien syöttämisestä ja validoinneista vastaava näkymä.
+ */
 public class PlayerNames {
 
     public void display(Stage window, Scene returnScene) {

@@ -18,6 +18,9 @@ import pong.domain.Score;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
+/**
+ * Varsinaisesta pelinäkymästä vastaava luokka.
+ */
 public class PongUI {
 
     private boolean timeLimit;
@@ -28,6 +31,17 @@ public class PongUI {
         this.gameScore = score;
     }
 
+    /**
+     * Metodi huolehtii pelinäkymän päivittämisestä AnimationTimer-luokan handle-metodilla.
+     * Näppäinpainalluksista pitää kirjaa hajautustaulu keysPressed, ja handle-metodissa kutsutaan tarvittaessa domain-pakkauksen
+     * sovelluslogiikasta vastaavien olioiden omia metodeja.
+     * 
+     * Jos pelimuotona on aikarajoitettu peli, käynnistetään ensimmäisellä kierroksella ajastin, joka pysäyttää pelin minuutin kuluttua jonka jälkeen
+     * ajastimelle rekisteröity tapahtumankäsittelija ohjaa Game Over -näkymään.
+     * 
+     * @param window sovelluksen pääikkunana toimiva Stage-olio
+     * @param returnScene paluunäkymän sisältävä Scene-olio pelistä poistumista varten
+     */
     public void display(Stage window, Scene returnScene) {
 
         Pane pane = new Pane();

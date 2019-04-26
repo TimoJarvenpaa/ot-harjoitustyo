@@ -12,7 +12,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-
+/**
+ * Sovelluksen päävalikkona toimiva luokka.
+ */
 public class MainMenu extends Application {
 
     public static int WIDTH = 600;
