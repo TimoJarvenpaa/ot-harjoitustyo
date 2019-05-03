@@ -1,6 +1,7 @@
 package pong.ui;
 
 import java.util.List;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -48,6 +49,7 @@ public class HighScores {
         List<Score> scores;
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setStyle("-fx-background: black; -fx-border-color: black;");
+        scrollPane.setFitToWidth(true);
         
         try {
             SQLScoreDAO scoreDAO = new SQLScoreDAO();
