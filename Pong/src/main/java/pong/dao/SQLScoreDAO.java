@@ -1,8 +1,10 @@
 package pong.dao;
 
+import java.io.FileInputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import pong.domain.Score;
 
 /**
@@ -13,8 +15,13 @@ public class SQLScoreDAO implements ScoreDAO {
 
     private String file;
 
-    public SQLScoreDAO(String scoreFile) throws Exception {
-        this.file = scoreFile;
+    public SQLScoreDAO() throws Exception {
+        this.file = getScoreFile();
+        createTable();
+    }
+    
+    public SQLScoreDAO(String file) throws Exception {
+        this.file = file;
         createTable();
     }
 
@@ -35,8 +42,8 @@ public class SQLScoreDAO implements ScoreDAO {
     }
 
     /**
-     * Metodi, joka muodostaa ja palauttaa tietokantayhteyden konstruktorissa määriteltyyn
-     * tiedostoon.
+     * Metodi, joka muodostaa ja palauttaa tietokantayhteyden konstruktorissa
+     * määriteltyyn tiedostoon.
      *
      * @return Connection-olio, jota voidaan käyttää tietokantakyselyjen
      * tekemiseen.
@@ -46,9 +53,11 @@ public class SQLScoreDAO implements ScoreDAO {
     }
 
     /**
-     * Metodi lisää tietokantaan parametrina annettua pistetilannetta vastaavan uuden rivin.
-     * 
-     * @return päättyneen pelin pistetilanteen ja pelaajien nimet sisältävä Score-olio;
+     * Metodi lisää tietokantaan parametrina annettua pistetilannetta vastaavan
+     * uuden rivin.
+     *
+     * @return päättyneen pelin pistetilanteen ja pelaajien nimet sisältävä
+     * Score-olio;
      */
     @Override
     public Score create(Score score) throws Exception {
@@ -65,8 +74,9 @@ public class SQLScoreDAO implements ScoreDAO {
     }
 
     /**
-     * Metodi noutaa tietokannasta kaikki tallennetut pisteet ja palauttaa listan Score-olioita.
-     * 
+     * Metodi noutaa tietokannasta kaikki tallennetut pisteet ja palauttaa
+     * listan Score-olioita.
+     *
      * @return Lista tietokannasta noudettuja pisteitä uusimmasta vanhimpaan;
      */
     @Override
@@ -91,4 +101,18 @@ public class SQLScoreDAO implements ScoreDAO {
         conn.close();
         return scores;
     }
+
+    /**
+     * Apumetodi, joka palauttaa sovelluksen juurihakemistossa olevan
+     * config.properties -tiedoston sisältämän scoreFile-parametrin, joka
+     * puolestaan määrää luotavan tietokannan tiedostonimen.
+     */
+    private String getScoreFile() throws Exception {
+
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("config.properties"));
+        String scoreFile = properties.getProperty("scoreFile");
+        return scoreFile;
+    }
+
 }

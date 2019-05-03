@@ -1,8 +1,6 @@
 package pong.ui;
 
-import java.io.FileInputStream;
 import java.util.List;
-import java.util.Properties;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -16,6 +14,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import pong.dao.SQLScoreDAO;
 import pong.domain.Score;
+import pong.domain.ScoreService;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
@@ -51,9 +50,9 @@ public class HighScores {
         scrollPane.setStyle("-fx-background: black; -fx-border-color: black;");
         
         try {
-            String scoreFile = getScoreFile();
-            SQLScoreDAO scoreDAO = new SQLScoreDAO(scoreFile);
-            scores = scoreDAO.getAll();
+            SQLScoreDAO scoreDAO = new SQLScoreDAO();
+            ScoreService scoreService = new ScoreService(scoreDAO);
+            scores = scoreService.getScores();
             scores.forEach((score) -> scoreNodes.getChildren().add(createScoreNode(score)));
         } catch (Exception e) {
 
@@ -66,14 +65,6 @@ public class HighScores {
 
         window.setScene(scoreScene);
         window.show();
-    }
-
-    public String getScoreFile() throws Exception {
-
-        Properties properties = new Properties();
-        properties.load(new FileInputStream("config.properties"));
-        String scoreFile = properties.getProperty("scoreFile");
-        return scoreFile;
     }
     
     public Node createScoreNode(Score score) {

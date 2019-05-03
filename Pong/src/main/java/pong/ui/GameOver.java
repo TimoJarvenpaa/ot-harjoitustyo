@@ -1,7 +1,5 @@
 package pong.ui;
 
-import java.io.FileInputStream;
-import java.util.Properties;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,6 +10,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import pong.dao.SQLScoreDAO;
 import pong.domain.Score;
+import pong.domain.ScoreService;
 import static pong.ui.MainMenu.HEIGHT;
 import static pong.ui.MainMenu.WIDTH;
 
@@ -22,13 +21,16 @@ import static pong.ui.MainMenu.WIDTH;
 public class GameOver {
 
     /**
-     * Vaihtaa parametrina annetun sovellusikkunan näkymän Game Over -ruutuun, jossa näytetään pelin lopputulos.
-     * Lopputulos tallennetaan tietokantaan SQLScoreDAO-olion avulla.
-     * Return napin painallus ohjaa takaisin returnScene olion mukaiseen näkymään.
-     * 
+     * Vaihtaa parametrina annetun sovellusikkunan näkymän Game Over -ruutuun,
+     * jossa näytetään pelin lopputulos. Lopputulos tallennetaan tietokantaan
+     * SQLScoreDAO-olion avulla. Return napin painallus ohjaa takaisin
+     * returnScene olion mukaiseen näkymään.
+     *
      * @param window sovelluksen pääikkunana toimiva Stage-olio
-     * @param returnScene paluunäkymän sisältävä Scene-olio nykyisestä näkymästä poistumista varten
-     * @param gameScore päättyneen pelin pisteet ja pelaajien nimet sisältävä tietorakenne
+     * @param returnScene paluunäkymän sisältävä Scene-olio nykyisestä näkymästä
+     * poistumista varten
+     * @param gameScore päättyneen pelin pisteet ja pelaajien nimet sisältävä
+     * tietorakenne
      */
     public void display(Stage window, Scene returnScene, Score gameScore) {
 
@@ -63,25 +65,11 @@ public class GameOver {
         window.show();
 
         try {
-            String scoreFile = getScoreFile();
-            SQLScoreDAO scoreDAO = new SQLScoreDAO(scoreFile);
-            scoreDAO.create(gameScore);
+            SQLScoreDAO scoreDAO = new SQLScoreDAO();
+            ScoreService scoreService = new ScoreService(scoreDAO);
+            scoreService.saveScore(gameScore);
         } catch (Exception e) {
 
         }
     }
-
-    /**
-     * Apumetodi, joka palauttaa sovelluksen juurihakemistossa olevan
-     * config.properties -tiedoston sisältämän scoreFile-parametrin, joka
-     * puolestaan määrää luotavan tietokannan tiedostonimen.
-     */
-    public String getScoreFile() throws Exception {
-
-        Properties properties = new Properties();
-        properties.load(new FileInputStream("config.properties"));
-        String scoreFile = properties.getProperty("scoreFile");
-        return scoreFile;
-    }
-
 }
