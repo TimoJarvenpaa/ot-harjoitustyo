@@ -54,11 +54,11 @@ public class Paddle {
     }
 
     /**
-     * Metodi, joka liikuttaa mailaa pelialueella pystyakselin suuntaisesti parametrin amount verran.
-     * Jos 
+     * Metodi, joka liikuttaa mailaa pelialueella pystyakselin suuntaisesti
+     * parametrin amount verran. Jos
      *
-     * @param amount pystyakselilla liikkuttava askelmäärä pikseleinä. Huom. Y-akselin arvot kasvavat alaspäin 
-     * ja pienenevät ylöspäin mennessä.
+     * @param amount pystyakselilla liikkuttava askelmäärä pikseleinä. Huom.
+     * Y-akselin arvot kasvavat alaspäin ja pienenevät ylöspäin mennessä.
      *
      * @return true jos maila voi liikkua pyydettyyn suuntaan, muuten false
      */

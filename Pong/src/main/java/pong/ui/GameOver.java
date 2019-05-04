@@ -23,7 +23,7 @@ public class GameOver {
     /**
      * Vaihtaa parametrina annetun sovellusikkunan näkymän Game Over -ruutuun,
      * jossa näytetään pelin lopputulos. Lopputulos tallennetaan tietokantaan
-     * SQLScoreDAO-olion avulla. Return napin painallus ohjaa takaisin
+     * ScoreService-luokan avulla. Return napin painallus ohjaa takaisin
      * returnScene olion mukaiseen näkymään.
      *
      * @param window sovelluksen pääikkunana toimiva Stage-olio

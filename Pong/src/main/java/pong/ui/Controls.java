@@ -16,8 +16,16 @@ import static pong.ui.MainMenu.WIDTH;
  */
 public class Controls {
 
+    /**
+     * Vaihtaa parametrina annetun sovellusikkunan näkymän kontrollit
+     * esittelevään näkymään.
+     *
+     * @param window sovelluksen pääikkunana toimiva Stage-olio
+     * @param returnScene paluunäkymän sisältävä Scene-olio nykyisestä näkymästä
+     * poistumista varten
+     */
     public void display(Stage window, Scene returnScene) {
-        
+
         VBox layout = new VBox(30);
         layout.setPrefSize(WIDTH, HEIGHT);
         layout.setStyle("-fx-background-color: black;");
@@ -27,19 +35,19 @@ public class Controls {
         header.setTextFill(Color.WHITE);
         header.setFont(Font.font("Verdana", 30));
         header.setStyle("-fx-padding: 0 0 40 0;");
-        
+
         Label label1 = new Label("Move left paddle:    W/S");
         label1.setTextFill(Color.WHITE);
         label1.setFont(Font.font("Verdana", 20));
-        
+
         Label label2 = new Label("Move right paddle:    ↑/↓");
         label2.setTextFill(Color.WHITE);
         label2.setFont(Font.font("Verdana", 20));
-        
+
         Label label3 = new Label("Exit to main menu:    ESC");
         label3.setTextFill(Color.WHITE);
         label3.setFont(Font.font("Verdana", 20));
-        
+
         Button returnButton = new Button("Return");
         returnButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;-fx-padding: 40 0 0 0;");
         returnButton.setOnAction(event -> {

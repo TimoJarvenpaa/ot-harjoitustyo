@@ -13,7 +13,8 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 /**
- * Sovelluksen päävalikkona toimiva luokka.
+ * Sovelluksen päävalikkona toimiva luokka, joka sisältää myös globaalit
+ * sovellusikkunan koosta vastaavat muuttujat WIDTH ja HEIGHT.
  */
 public class MainMenu extends Application {
 
@@ -22,7 +23,7 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage window) throws Exception {
-        
+
         VBox layout = new VBox(20);
         layout.setPrefSize(WIDTH, HEIGHT);
         layout.setStyle("-fx-background-color: black;");
@@ -34,10 +35,10 @@ public class MainMenu extends Application {
 
         Button playButton = new Button("Play");
         playButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
-        
+
         Button controlsButton = new Button("Controls");
         controlsButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
-        
+
         Button highScoresButton = new Button("High-Scores");
         highScoresButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;");
 
@@ -59,7 +60,7 @@ public class MainMenu extends Application {
 
             }
         });
-        
+
         controlsButton.setOnAction(event -> {
             Controls controls = new Controls();
             try {
@@ -68,7 +69,7 @@ public class MainMenu extends Application {
 
             }
         });
-        
+
         highScoresButton.setOnAction(event -> {
             HighScores scores = new HighScores();
             try {

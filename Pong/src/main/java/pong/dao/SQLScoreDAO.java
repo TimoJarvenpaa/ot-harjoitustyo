@@ -15,11 +15,19 @@ public class SQLScoreDAO implements ScoreDAO {
 
     private String file;
 
+    /**
+     * Luokan oletusarvoinen konstruktori, jossa tietokantatiedoston nimi haetaan config.properties tiedostosta
+     * apumetodin getScoreFile avulla. Metodi createTable alustaa tietokannan luomalla tarvittaessa puuttuvan tietokantataulun.
+     */
     public SQLScoreDAO() throws Exception {
         this.file = getScoreFile();
         createTable();
     }
-    
+
+    /**
+     * Luokan vaihtoehtoinen konstruktori, jonka avulla yksikkötesteissä DAO:lle on mahdollista antaa luotavan väliaikaisen 
+     * tietokannan tiedostonimi ja -sijainti.
+     */
     public SQLScoreDAO(String file) throws Exception {
         this.file = file;
         createTable();

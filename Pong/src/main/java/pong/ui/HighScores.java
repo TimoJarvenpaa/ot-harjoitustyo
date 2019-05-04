@@ -22,7 +22,16 @@ import static pong.ui.MainMenu.WIDTH;
  * Aikarajoitettujen otteluiden lopputulokset esittävä näkymä.
  */
 public class HighScores {
-    
+
+    /**
+     * Vaihtaa parametrina annetun sovellusikkunan näkymän pistetilastojen
+     * näyttämisestä vastaavaan näkymään. Pistetilastot haetaan tietokannasta
+     * käyttäen ScoreService-oliota
+     *
+     * @param window sovelluksen pääikkunana toimiva Stage-olio
+     * @param returnScene paluunäkymän sisältävä Scene-olio nykyisestä näkymästä
+     * poistumista varten
+     */
     public void display(Stage window, Scene returnScene) {
 
         VBox layout = new VBox(30);
@@ -35,21 +44,20 @@ public class HighScores {
         header.setFont(Font.font("Verdana", 30));
         header.setStyle("-fx-padding: 0 0 40 0;");
 
-
         Button returnButton = new Button("Return");
         returnButton.setStyle("-fx-background-color: black;-fx-text-fill: white;-fx-font-size: 20pt;-fx-padding: 40 0 0 0;");
         returnButton.setOnAction(event -> {
             window.setScene(returnScene);
         });
-        
+
         VBox scoreNodes = new VBox(10);
         scoreNodes.setAlignment(Pos.CENTER);
-        
+
         List<Score> scores;
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setStyle("-fx-background: black; -fx-border-color: black;");
         scrollPane.setFitToWidth(true);
-        
+
         try {
             SQLScoreDAO scoreDAO = new SQLScoreDAO();
             ScoreService scoreService = new ScoreService(scoreDAO);
@@ -58,7 +66,7 @@ public class HighScores {
         } catch (Exception e) {
 
         }
-        
+
         scrollPane.setContent(scoreNodes);
 
         layout.getChildren().addAll(header, scrollPane, returnButton);
@@ -67,7 +75,16 @@ public class HighScores {
         window.setScene(scoreScene);
         window.show();
     }
-    
+
+    /**
+     * Apumetodi, joka muodostaa yksittäisestä pistetuloksesta sopivasti
+     * muotoillun HBox-olion, jollaisia tarvitaan ScrollPanen sisällön
+     * asettamista varten
+     *
+     * @param score yksittäistä pistetulosta vastaava olio
+     * @return box Node-luokan perivä HBox-olio, jonka voi asettaa
+     * ScrollPane-olion lapsisolmuksi.
+     */
     public Node createScoreNode(Score score) {
         HBox box = new HBox(10);
         box.setStyle("-fx-background-color: black;");

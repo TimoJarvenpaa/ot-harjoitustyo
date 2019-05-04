@@ -18,6 +18,14 @@ import static pong.ui.MainMenu.WIDTH;
  */
 public class PlayerNames {
 
+    /**
+     * Vaihtaa parametrina annetun sovellusikkunan näkymän pelaajien nimien
+     * syötöstä ja validoinnista vastaavaan näkymään.
+     *
+     * @param window sovelluksen pääikkunana toimiva Stage-olio
+     * @param returnScene paluunäkymän sisältävä Scene-olio nykyisestä näkymästä
+     * poistumista varten
+     */
     public void display(Stage window, Scene returnScene) {
 
         VBox layout = new VBox(30);

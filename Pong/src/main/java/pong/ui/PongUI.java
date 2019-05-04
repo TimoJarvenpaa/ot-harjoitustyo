@@ -32,15 +32,19 @@ public class PongUI {
     }
 
     /**
-     * Metodi huolehtii pelinäkymän päivittämisestä AnimationTimer-luokan handle-metodilla.
-     * Näppäinpainalluksista pitää kirjaa hajautustaulu keysPressed, ja handle-metodissa kutsutaan tarvittaessa domain-pakkauksen
+     * Metodi huolehtii pelinäkymän päivittämisestä AnimationTimer-luokan
+     * handle-metodilla. Näppäinpainalluksista pitää kirjaa hajautustaulu
+     * keysPressed, ja handle-metodissa kutsutaan tarvittaessa domain-pakkauksen
      * sovelluslogiikasta vastaavien olioiden omia metodeja.
-     * 
-     * Jos pelimuotona on aikarajoitettu peli, käynnistetään ensimmäisellä kierroksella ajastin, joka pysäyttää pelin minuutin kuluttua jonka jälkeen
-     * ajastimelle rekisteröity tapahtumankäsittelija ohjaa Game Over -näkymään.
-     * 
+     *
+     * Jos pelimuotona on aikarajoitettu peli, käynnistetään ensimmäisellä
+     * kierroksella ajastin, joka pysäyttää pelin minuutin kuluttua jonka
+     * jälkeen ajastimelle rekisteröity tapahtumankäsittelija ohjaa Game Over
+     * -näkymään.
+     *
      * @param window sovelluksen pääikkunana toimiva Stage-olio
-     * @param returnScene paluunäkymän sisältävä Scene-olio pelistä poistumista varten
+     * @param returnScene paluunäkymän sisältävä Scene-olio pelistä poistumista
+     * varten
      */
     public void display(Stage window, Scene returnScene) {
 

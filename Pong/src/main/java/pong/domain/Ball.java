@@ -113,8 +113,10 @@ public class Ball {
     }
 
     /**
-     * Metodi arpoo pallon lähtökulman ja nopeuden. Pelin mielekkyyden takia kulma valitaan väliltä [-45, 45] asetetta,
-     * jotta pallo ei jäisi kimpoilemaan pelialueen keskelle. 50% todennäköisyydellä pallo lähtee aloitustilanteessa vasemmalle tai oikealle.
+     * Metodi arpoo pallon lähtökulman ja nopeuden. Pelin mielekkyyden takia
+     * kulma valitaan väliltä [-45, 45] asetetta, jotta pallo ei jäisi
+     * kimpoilemaan pelialueen keskelle. 50% todennäköisyydellä pallo lähtee
+     * aloitustilanteessa vasemmalle tai oikealle.
      */
     public void randomizeDirectionAndSpeed() {
         double min = Math.PI / 4 * -1;
