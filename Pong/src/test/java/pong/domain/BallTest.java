@@ -62,5 +62,29 @@ public class BallTest {
         assertFalse(initialXSpeed == ball.getXSpeed());
         assertFalse(initialYSpeed == ball.getYSpeed());
     }
+    
+    @Test
+    public void ifBallReachesTheLeftEdgeBallPositionIsResetAndRightPaddleScoreIncreases(){
+        ball.getBall().setLayoutX(0 - ball.getBall().getRadius());
+        int rightScore = rightPaddle.getScore();
+        ball.update(leftPaddle, rightPaddle);
+        
+        assertEquals(WIDTH / 2, ball.getBall().getLayoutX(), 0.1);
+        assertEquals(HEIGHT / 2, ball.getBall().getLayoutY(), 0.1);
+        
+        assertEquals(rightScore + 1, rightPaddle.getScore());
+    }
+    
+    @Test
+    public void ifBallReachesTheRightEdgeBallPositionIsResetAndLeftPaddleScoreIncreases(){
+        ball.getBall().setLayoutX(WIDTH + ball.getBall().getRadius());
+        int leftScore = leftPaddle.getScore();
+        ball.update(leftPaddle, rightPaddle);
+        
+        assertEquals(WIDTH / 2, ball.getBall().getLayoutX(), 0.1);
+        assertEquals(HEIGHT / 2, ball.getBall().getLayoutY(), 0.1);
+        
+        assertEquals(leftScore + 1, leftPaddle.getScore());
+    }
 
 }
