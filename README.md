@@ -18,6 +18,8 @@ Sovelluksen avulla kaksi pelaajaa voivat pelata jaetulla näppäimistöllä klas
 
 ## Julkaistut versiot
 
+[Loppupalautus](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.2)
+
 [Viikko 6](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.1)
 
 [Viikko 5](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.0)
