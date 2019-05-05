@@ -4,7 +4,7 @@
 
 Sovelluksen avulla kaksi käyttäjää voi pelata jaetulla näppäimistöllä klassisen Pong-videopelin kaltaista yksinkertaista peliä. Pelissä osapuolet liikuttavat pelikentän oikealla tai vasemmalla puolella olevia "mailoja" pystyakselin suuntaisesti tarkoituksenaan kerätä pisteitä kimmottamalla pelikentällä liikkuva pallo vastustajan puoleiseen laitaan ja torjumalla vastapuolen yrityksiä tehdä maaleja.
 
-## Käyttöliittymäluonnos
+## Käyttöliittymä
 
 Sovelluksen kaksi tärkeintä näkymää ovat sen päävalikko ja itse pelinäkymä.
 
@@ -13,20 +13,21 @@ Sovelluksen kaksi tärkeintä näkymää ovat sen päävalikko ja itse pelinäky
 
 ![Pelinäkymä](kuvat/pelinakyma.png)
 
-Sovellus aukeaa päävalikkonäkymään, josta on mahdollista siirtyä pelinäkymään tai muihin mahdollisiin näkymiin.
+Sovellus aukeaa käynnistyessään päävalikkonäkymään, josta on mahdollista siirtyä muihin näkymiin.
 
-## Perusversion tarjoama toiminnallisuus
+## Sovelluksen tarjoama toiminnallisuus
 
 * käyttäjä voi aloittaa ja keskeyttää pelin
+* pelaajille annetaan nimimerkit mahdollista tulosten tallennusta varten
+* pelissä on kaksi pelitilaa, aikarajoitetettu minuutin mittainen peli ja päättymätön pelitila
 * pelissä molempia mailoja liikutetaan näppäimistön avulla, mikä mahdollistaa kaksinpelin
-* liikkuvan pallon osuminen mailaan aiheuttaa asianmukaisen kimpoamisen
-* pallon osuessa vastustajan päätyyn, maalin tekijälle lisätään piste ja peli jatkuu aloitustilanteesta
+* liikkuvan pallon osuminen mailaan tai pelikentän reunoihin aiheuttaa asianmukaisen kimpoamisen
+* pallon osuessa vastustajan päätyyn, maalin tekijälle lisätään piste ja pallo palautuu keskelle pelialuetta
+* pallon lähtösuunta ja -kulma arvotaan joka kerta kun pallo palautuu keskelle maalin tai uuden pelin aloituksen johdosta
+* aikarajoitetun pelin päätteeksi ottelun pistetilanne tallennetaan tietokantaan
+* aikaisempien otteluiden tuloksia voi tarkastella päävalikosta löytyvän High-Score -näkymän kautta
 
 ## Jatkokehitysideoita
 
-Perustoiminnallisuuksien toteuttamisen jälkeen sovellusta voidaan täydentää esim. seuraavilla ominaisuuksilla:
-
-* pelimuotoina erikseen aikarajoitettu- ja rajoittamaton peli
-* huippupisteiden tai -aikojen tallentaminen tiedostoon tai tietokantaan ja niiden tarkastelu
-* yksinkertainen tekoäly, joka mahdollistaa yksinpelin
-* vaihtoehtoisia pelikenttiä, joissa mukana myös esteitä tms.
+* yksinkertainen tekoäly, joka mahdollistaisi myös yksinpelin
+* asetusvalikko, josta mm. sovellusikkunan, mailojen ja pallon kokoa voisi vaihtaa

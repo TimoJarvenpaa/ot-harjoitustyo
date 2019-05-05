@@ -18,13 +18,13 @@ Sovelluksen *dao*-pakkauksesta löytyvää *SQLScoreDAO*:a on testattu luokassa 
 
 Sovelluksen testauksessa on saavutettu 86% rivikattavuus ja 79% haarautumakattavuus. Testikattavuusraportin ulkopuolelle on jätetty käyttöliittymän muodostavat luokat. Yksityiskohtaisempaa tarkastelua varten testikattavuusraportin voi luoda komennolla ```mvn test jacoco:report```
 
-![testikattavuus](kuvat/testikattavuus.png)
+![testikattavuus](kuvat/testikattavuus.PNG)
 
 Testien ulkopuolelle jääneet rivit ja haaraumat koostuvat pääasiassa pallon liikkumiseen liittyvistä toiminnallisuuksista. En kokenut mielekkääksi testata niitä kaikkia, sillä pallon sijainti pitäisi näissä tilanteissa manuaalisesti ensin asettaa ja sitten tarkistaa.
 
 ## Järjestelmätestaus
 
-Sovelluksen käyttöliittymän kautta tehtävä järjestelmätestaus on suoritettu käsin.
+Sovelluksen käyttöliittymän kautta tehtävä järjestelmätestaus on suoritettu käsin kokeilemalla mm. vaatimusmäärittelyssä listattuja toiminnallisuuksia.
 
 ### Asennus ja konfigurointi
 

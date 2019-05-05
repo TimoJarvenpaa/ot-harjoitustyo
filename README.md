@@ -12,13 +12,15 @@ Sovelluksen avulla kaksi pelaajaa voivat pelata jaetulla näppäimistöllä klas
 
 [Arkkitehtuurikuvaus](dokumentointi/arkkitehtuuri.md)
 
+[Testausdokumentti](dokumentointi/testaus.md)
+
 [Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
 
 ## Julkaistut versiot
 
-[Viikko 5](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.0)
-
 [Viikko 6](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.1)
+
+[Viikko 5](https://github.com/TimoJarvenpaa/ot-harjoitustyo/releases/tag/v1.0)
 
 ## Komentorivitoiminnot
 

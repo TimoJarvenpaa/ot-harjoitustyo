@@ -23,4 +23,9 @@
 |  | 2 | javadocin käyttöönotto ja alustava dokumentointi |
 |  | 1 | alustava käyttöohje |
 |  | 2 | arkkitehtuuridokumentin täydennys ja dokumentaation päivitys |
-| yht   | 42 | |
+| 3.5. | 2 | ScoreDAO:n käyttö ulkoistettu ScoreService-luokalle |
+| 4.5. | 1 | lisätty puuttuvia testejä |
+|  | 1 | JavaDoc viimeistelty |
+|  | 1 | testausdokumentti |
+| 5.5. | 3 | dokumentaatio viimeistelty |
+| yht   | 50 | |
